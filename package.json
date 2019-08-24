@@ -1,21 +1,21 @@
 {
-  "name": "phaser3-plugin-template",
+  "name": "phaser3-health-bar-plugin",
   "version": "1.0.0",
-  "description": "Phaser 3 Plugin Template",
+  "description": "Phaser 3 Plugin Health Bar",
   "main": "src/main.js",
   "scripts": {
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/photonstorm/phaser3-plugin-template.git"
+    "url": "git+https://github.com/jl-velasco/phaser3-health-bar-plugin.git"
   },
-  "author": "Richard Davey",
+  "author": "Jorge Velasco",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/photonstorm/phaser3-plugin-template/issues"
+    "url": "https://github.com/jl-velasco/phaser3-health-bar-plugin/issues"
   },
-  "homepage": "https://github.com/photonstorm/phaser3-plugin-template#readme",
+  "homepage": "https://github.com/jl-velasco/phaser3-health-bar-plugin#readme",
   "devDependencies": {
     "webpack": "^3.10.0"
   }
