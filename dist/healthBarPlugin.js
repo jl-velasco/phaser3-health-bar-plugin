@@ -78,9 +78,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports) {
 
 /**
-* @author       Richard Davey <rich@photonstorm.com>
-* @copyright    2018 Photon Storm Ltd.
-* @license      {@link https://github.com/photonstorm/phaser3-plugin-template/blob/master/LICENSE|MIT License}
+* @author       Jorge Velasco <jorge.zgz@gmail.com>
+* @license      {@link https://github.com/jl-velasco/phaser3-health-bar-plugin/blob/master/LICENSE|MIT License}
 */
 
 var healthBarPlugin = function (scene)
