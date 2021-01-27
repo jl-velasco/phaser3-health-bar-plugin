@@ -1,22 +1,47 @@
 {
-  "name": "phaser3-health-bar-plugin",
-  "version": "1.0.0",
-  "description": "Phaser 3 Plugin Health Bar",
-  "main": "src/main.js",
-  "scripts": {
-    "build": "webpack"
+  "_from": "https://github.com/jl-velasco/phaser3-health-bar-plugin/tarball/dev",
+  "_id": "phaser3-health-bar-plugin@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-rCu3gudUq41ytQXH6AG25SR4GkGQHKb2kaHqsduCZYwB6AqRSZN9oguK0zNWjvoShoxjQ/e2NBKyfREyYeP2sw==",
+  "_location": "/phaser3-health-bar-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://github.com/jl-velasco/phaser3-health-bar-plugin/tarball/dev",
+    "rawSpec": "https://github.com/jl-velasco/phaser3-health-bar-plugin/tarball/dev",
+    "saveSpec": "https://github.com/jl-velasco/phaser3-health-bar-plugin/tarball/dev",
+    "fetchSpec": "https://github.com/jl-velasco/phaser3-health-bar-plugin/tarball/dev"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://github.com/jl-velasco/phaser3-health-bar-plugin/tarball/dev",
+  "_shasum": "0cfde7fdedd21885a6d0f668324f278f5b6d7cec",
+  "_spec": "https://github.com/jl-velasco/phaser3-health-bar-plugin/tarball/dev",
+  "_where": "C:\\xampp\\htdocs\\game_z",
+  "author": {
+    "name": "Jorge Velasco"
+  },
+  "bugs": {
+    "url": "https://github.com/jl-velasco/phaser3-health-bar-plugin/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Phaser 3 Plugin Health Bar",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  },
+  "homepage": "https://github.com/jl-velasco/phaser3-health-bar-plugin#readme",
+  "license": "MIT",
+  "main": "src/main.js",
+  "name": "phaser3-health-bar-plugin",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jl-velasco/phaser3-health-bar-plugin.git"
   },
-  "author": "Jorge Velasco",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jl-velasco/phaser3-health-bar-plugin/issues"
+  "scripts": {
+    "build": "webpack"
   },
-  "homepage": "https://github.com/jl-velasco/phaser3-health-bar-plugin#readme",
-  "devDependencies": {
-    "webpack": "^3.10.0"
-  }
+  "version": "1.0.0"
 }
