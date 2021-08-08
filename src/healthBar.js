@@ -20,8 +20,9 @@ class healthBarPlugin extends Phaser.GameObjects.Graphics {
                 font: "20px monospace",
                 fill: "#fff"
             },
-            foreground: 0x8fff00,
-            background: 0x000000,
+            foreground: '0x8fff00',
+            background: '0x000000',
+            danger: '0xBF9000',
             nameBar: null,
         };
 
@@ -132,7 +133,7 @@ class healthBarPlugin extends Phaser.GameObjects.Graphics {
     //  Called when a Scene is destroyed by the Scene Manager. There is no coming back from a destroyed Scene, so clear up all resources here.
     destroy() {
         this.clear();
-        this.nameBar.setVisible(false);
+        // this.nameBar.setVisible(false);
         this.shutdown();
         this.scene = undefined;
     }
@@ -149,39 +150,59 @@ class healthBarPlugin extends Phaser.GameObjects.Graphics {
         this.clear();
 
         this.fillStyle(this.options.background);
-        this.fillRect(0, 0, this.options.width, this.options.height);
+        this.fillRect(0, 0, this.options.width + 4, this.options.height);
 
 
-        if (this.gameObject.health < 50) {
-            this.fillStyle(0xff0000);
+        if (this.gameObject.health < 40) {
+            this.fillStyle(this.options.danger);
         } else {
-            this.fillStyle(0x00ff00);
+            this.fillStyle(this.options.foreground);
         }
 
-        var d = Math.floor(((this.options.width - 4) / 100) * this.gameObject.health);
+        var d = Math.floor(((this.options.width) / 100) * this.gameObject.health);
 
         this.fillRect(2, 2, d, this.options.height - 4);
-    };
+    }
 
     damage() {
-        if (this.oldHealth > this.gameObject.health) {
-            let dmg = this.oldHealth - this.gameObject.health;
-            let text = this.scene.add.text(this.gameObject.x - (this.gameObject.width / 2) - 3, this.gameObject.y - (this.gameObject.height / 2) - 3, '-' + dmg);
+        const gameObject = this.gameObject;
+        if (this.oldHealth > gameObject.health) {
+            let dmg = this.oldHealth - gameObject.health;
+            let text = this.scene.add.text(gameObject.x - (gameObject.width / 2) - 3, gameObject.y - (gameObject.height / 2) - 3, '-' + dmg);
             text.setFontFamily('retro');
             text.setFontSize(9);
             text.setTint(0xB80A0A);
+
             this.scene.tweens.add({
                 targets: text,
-                x: this.gameObject.x - (this.gameObject.width / 2) - 3,
-                y: this.gameObject.y - (this.gameObject.height / 2) - 3 - 40,
+                x: gameObject.x - (gameObject.width / 2) - 3,
+                y: gameObject.y - (gameObject.height / 2) - 3 - 40,
                 duration: Phaser.Math.Between(500, 1000),
                 ease: 'Power1',
                 onComplete: function () {
                     text.destroy();
                 }
             });
+
+            this.scene.tweens.addCounter({
+                targets: gameObject,
+                duration: 500,
+                onUpdate: function (tween)
+                {
+                    // gameObject.setTint(0xCC0000, 0xF9CB9C, 0xF9CB9C, 0xCC0000);
+                    gameObject.setTintFill(0xCC0000, 0xF9CB9C, 0xF9CB9C, 0xCC0000);
+                    gameObject.setAlpha(0.7);
+                    gameObject.setScale(0.85);
+                },
+                onComplete: function (tween)
+                {
+                    gameObject.clearTint();
+                    gameObject.setAlpha(1);
+                    gameObject.setScale(1);
+                }
+            })
         }
-    };
+    }
 
     healthPrint() {
         return this.gameObject.health + ' / ' + this.gameObject.maxHealth;
